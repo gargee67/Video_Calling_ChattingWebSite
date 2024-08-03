@@ -50,7 +50,7 @@ conn.once('open', () => {
 });
 
 const storage = new GridFsStorage({
-    url: "mongodb://127.0.0.1:27017/Socialmedia",
+    url: "mongodb+srv://gargeedas8061:uyLGVoUFOePmuLXv@cluster0.pdhoz7v.mongodb.net/Socialmedia?retryWrites=true&w=majority&appName=Cluster0",
     //content:(req,res)=>{console}
     file: (req, file) => {
       return new Promise((resolve, reject) => {
@@ -96,7 +96,6 @@ app.post("/register",async(req,res)=>{
    
 })
 app.post('/upload', upload.single('file'), async(req, res) => {
-   
   const check=await gfs.files.findOne({_id:req.file.id});
    const createpost= new postprofile({
         fileid:check._id.toHexString(),

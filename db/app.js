@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-const mongodb="mongodb://127.0.0.1:27017/Socialmedia";
-mongoose.connect(mongodb,(err)=>{
+const mongodb="mongodb+srv://gargeedas8061:uyLGVoUFOePmuLXv@cluster0.pdhoz7v.mongodb.net/Socialmedia?retryWrites=true&w=majority&appName=Cluster0";
+export const mongoseeConnection = mongoose.connect(mongodb,(err)=>{
     if(err){
         console.log("unnable connection");
     }else{
